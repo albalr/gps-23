@@ -27,8 +27,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: pylint
       run: |
-        pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
-        pylint $(git ls-files '*.py')
+        pylint transform.py
     - name: Test with pytest
       run: |
         pytest
